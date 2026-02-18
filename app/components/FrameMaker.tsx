@@ -20,11 +20,13 @@ export default function FrameMaker() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
   const FRAMES = [
-    { id: 1, src: "/frame_1.png", name: "Style 1" },
-    { id: 2, src: "/frame_2.png", name: "Style 2" },
-    { id: 3, src: "/frame_3.png", name: "Style 3" },
-    { id: 4, src: "/frame_4.png", name: "Style 4" },
+    { id: 1, src: `${basePath}/frame_1.png`, name: "Style 1" },
+    { id: 2, src: `${basePath}/frame_2.png`, name: "Style 2" },
+    { id: 3, src: `${basePath}/frame_3.png`, name: "Style 3" },
+    { id: 4, src: `${basePath}/frame_4.png`, name: "Style 4" },
   ];
   const [selectedFrame, setSelectedFrame] = useState(FRAMES[0].src);
 
